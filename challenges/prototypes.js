@@ -1,5 +1,7 @@
 /* ===== Prototype Practice ===== */
 
+// Important: I commented out prototypes.js because it is conflicting with classes.js having the same named variables
+
 // Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge.
 
 /* == Step 1: Base Constructor ==

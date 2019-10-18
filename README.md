@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+ForEach() is used for it's side effects. It doesn't do anything with the return. It's essentially a for loop going through each item of the array one at a time. .Map() actually uses the return of each iteration through elements in the array and pushes those return values onto a new array. 
+
 2. What is the difference between a function and a method?
+
+A method is a function stored as an object's property. In OOP, this is usually done because functions and associated data they work with are kept organized together with objects. Syntactically, this means methods don't really have access to arrow functions since they're going to need 'this' binding to operate on the parts in that same object. 
 
 3. What is closure?
 
+Accessible elements outside of a function. Functions can reach outwards to use variables within their scope. This also refers to the ability functions have to save the state of these variables. This is creating a closure. 
+
 4. Describe the four rules of the 'this' keyword.
 
+window binding - This is when 'this' gets bound to the window object. No real practical use. Might happen accidentally with arrow functions. 
+
+implicit binding - Most use cases fall under this. An object calls a method containing this. 'this' becomes bound to the object containing the method at the time of the method being invoked. A good indication is that when you have syntax like: "Object.Method();". The object to the left of the dot will be the containing object calling method containing 'this', and that's why 'this' will be bound to that object. 
+
+new binding - I think this is actually the same thing as implicit binding, because when an object is instantiated with the new keyword it becomes the containing object of the class or constructor function and binds the 'this' keyword to the new properties. Seems like the same universal rule, just no dot and object to the left of method to indicate it's happening. 
+
+explicit binding - Manually setting an object to bind 'this' to with .call(), .apply(), .bind(). Allows for setting up inheritance of properties in constructor function chains. And is what works behind the scenes with classes. You can probably also just use this functionality to share functions generally. Though, I suspect this might not be best practice for organization purposes. 
+
 5. Why do we need super() in an extended class?
+
+super() serves the function of .call() in constructor functions, sending an object(or even just some of it's properties) to call the parent class. This creates an inheritance chain, setting up a Child class with it's parental properties included. Super() is called within the constructor block so that the new keyword in Child class can bind all the 'this's up into one object when called. 
 
 ## Project Set up
 
